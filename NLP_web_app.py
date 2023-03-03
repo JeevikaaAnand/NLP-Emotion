@@ -36,7 +36,7 @@ def main():
     """
     st.markdown(html_temp,unsafe_allow_html=True)
 
-    Comments = st.text('Enter a comment')
+    Comments = st.text_input('Enter a comment')
     
     Emotion = ''
     
