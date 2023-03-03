@@ -18,7 +18,7 @@ def welcome():
 
 def Emotion_prediction(Comments):
     
-    prediction=classifier.predict([[sub]])
+    prediction=classifier.predict([[Comments]])
     print(prediction)
     
     if (prediction[0] == 0):
@@ -41,7 +41,7 @@ def main():
     Emotion = ''
     
     if st.button('Emotion Result'):
-        Emotion = Emotion_prediction(sub)
+        Emotion = Emotion_prediction(Comments)
         
     st.success(Emotion)
     
