@@ -10,15 +10,15 @@ import pandas as pd
 import pickle
 import streamlit as st
 
-pickle_in = open("NLP.pkl","rb")
+pickle_in = open("NLP1.pkl","rb")
 classifier=pickle.load(pickle_in)
 
 def welcome():
     return "Welcome All"
 
-def Emotion_prediction(Lemma_text):
+def Emotion_prediction(Comments):
     
-    prediction=classifier.predict([[Lemma_text]])
+    prediction=classifier.predict([[Comments]])
     print(prediction)
     
     if (prediction[0] == 0):
@@ -36,12 +36,12 @@ def main():
     """
     st.markdown(html_temp,unsafe_allow_html=True)
 
-    Lemma_text = st.text_input('Enter a comment')
+    Comments = st.text('Enter a comment')
     
     Emotion = ''
     
     if st.button('Emotion Result'):
-        Emotion = Emotion_prediction(Lemma_text)
+        Emotion = Emotion_prediction(Comments)
         
     st.success(Emotion)
     
