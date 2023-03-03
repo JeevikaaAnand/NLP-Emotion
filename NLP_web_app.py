@@ -10,7 +10,7 @@ import pandas as pd
 import pickle
 import streamlit as st
 
-pickle_in = open("NLP1.pkl","rb")
+pickle_in = open("emotions.pkl","rb")
 classifier=pickle.load(pickle_in)
 
 def welcome():
@@ -28,7 +28,6 @@ def Emotion_prediction(Comments):
 
 def main():
     st.title('emotion Prediction Web App')
-    st.header('User Input Parameters')
     html_temp = """
     <div style="background-color:tomato;padding:10px">
     <h2 style="color:white;text-align:center;">Streamlit Emotion Prediction App </h2>
