@@ -10,7 +10,7 @@ import pandas as pd
 import pickle
 import streamlit as st
 
-pickle_in = open("E:/Userfiles/Desktop/Python/project/NLP.pkl","rb")
+pickle_in = open("NLP.pkl","rb")
 classifier=pickle.load(pickle_in)
 
 def welcome():
