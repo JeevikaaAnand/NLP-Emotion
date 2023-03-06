@@ -10,15 +10,21 @@ import pandas as pd
 import pickle
 import streamlit as st
 
-pickle_in = open("emotions.pkl","rb")
-classifier=pickle.load(pickle_in)
+#loading in the model the vectorizer file
+pkl_in = open("vectorizer.pkl", 'rb')
+loaded_vectorizer = pickle.load(pkl_in)
+
+# loading in the model to predict on the data
+pickle_in = open("emotions.pkl", 'rb')
+classifier = pickle.load(pickle_in)
+
 
 def welcome():
     return "Welcome All"
 
 def Emotion_prediction(Comments):
     
-    prediction=classifier.predict([[Comments]])
+    prediction=classifier.predict(loaded_vectorizer.transform([Comments]))
     print(prediction)
     
     if (prediction[0] == 0):
